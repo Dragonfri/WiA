@@ -26,7 +26,7 @@ const TopContainer = styled.div`
 const Mainbg = styled.div` //배경화면 흰색으로 만들기 위함.
   width: 100%;
   height: 100%;
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.5);
   position: absolute;
   z-index: 0;
 `
@@ -36,17 +36,18 @@ const MainTitle = styled.div`
     text-align: center;
     width:100%;
     height: 10vh;
-    padding-top: 1vh; //임시로 해봄 너무 천장에 붙어있어서
-    z-index: 2;
+    padding-top: 3vh; //임시로 해봄 너무 천장에 붙어있어서
 
     @media (min-width: 0px) {
-      font-size: 30px;
-      font-weight: 700;
+      font-size: 40px;
+      font-weight: 900;
       
     }
     @media (min-width: 770px) {
-      font-size: 40px;
+      font-size: 50px;
     }
+    z-index: 2;
+    color: rgba(15,85,173,1);
 `
 
 const SecondContainer = styled.div`
@@ -70,7 +71,7 @@ const MainImg = styled.img`
     /* background-image: url(${mainImg});
     background-position: center;
     background-size: cover; */
-
+    border-radius: 10%;
     @media (min-width: 0px) {
         width:70vw;
         height:70vw;
@@ -86,10 +87,13 @@ const SectionContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 40vw;
     height:30vw;
-    
+
+    /* background-color: rgba(15,85,173,0.9); */
+    border-radius: 10%;
+    color: rgba(15,85,173,1);
 `
 
 const Section = styled(Link)`
@@ -97,14 +101,25 @@ const Section = styled(Link)`
     margin: 0.5vw;
 
     @media (min-width: 0px) {
-      font-size: 20px;
-      font-weight: 500;
+      font-size: 40px;
+      font-weight: 900;
       
     }
     @media (min-width: 770px) {
-      font-size: 45px;
+      font-size: 50px;
+    }
+    @media (min-width: 1000px) {
+      font-size: 70px;
+    }
+
+    &:hover{
+      scale: 1.3;
+      color: white;
+      -webkit-text-stroke: 1px #0F55AD;
     }
 `
+
+
 
 function Secondfloor() {
 
@@ -133,7 +148,7 @@ function Secondfloor() {
                     <Section to={"section5"}>section5</Section>
                 </SectionContainer>
             </SecondContainer>
-            <Mainbg />
+            <Mainbg/>
         </TopContainer>
     );
 }

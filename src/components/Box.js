@@ -55,7 +55,7 @@ const Bg = styled.div`
     color: white;
     &:hover{
         background-color: rgba(255,255,255, 0.4);
-        color: black;
+        color: #0F55AD;
         font-size: 70px;
     }
 `
