@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import sectionImg from "../imgs/f1s1.jpg";
 import Wifibox from './Wifibox';
-import mainBg from '../imgs/f1s1Main.jpg'
 
 
 
@@ -30,7 +28,7 @@ const SectionTitle = styled.div`
     text-align: center;
     width:100%;
     height: 10vh;
-    padding-top: 2vh; //임시로 해봄 너무 천장에 붙어있어서
+    padding-top: 3vh; //임시로 해봄 너무 천장에 붙어있어서
 
     @media (min-width: 0px) {
       font-size: 40px;
@@ -71,7 +69,6 @@ const SectionImg = styled.img`
     @media (min-width: 0px) {
         width: 60vw;
         height: 29vh;
-        padding: 1vh 0 1vh 0;
     }
     @media (min-width: 770px) {
         width: 40vw;
@@ -89,12 +86,11 @@ const WifiContainer = styled.div`
     margin-top: 2vh;
     /* background-color: rgba(15,85,173,1); */
     /* border-radius: 20%; */
-
+    
 
     @media (min-width: 0px) {
         width: 90vw;
         height: 29vh;
-        padding: 1vh 0 1vh 0;
     }
     @media (min-width: 770px) {
         width: 50vw;
@@ -110,17 +106,17 @@ const DetailImgsContainer = styled.div`
     /* background-color: blue; */
 `
 
-function Section1() {
+function Sections(props) {
 
 
     return (
-        <TopContainer>
+        <TopContainer mainBg={props.mainBg}>
 
-            <SectionTitle>section1</SectionTitle>
+            <SectionTitle>section{props.sectionNum}</SectionTitle>
 
             <SecondContainer>
 
-                <SectionImg src={sectionImg} />
+                <SectionImg src={props.sectionImg} />
 
                 <WifiContainer>
                     
@@ -155,7 +151,7 @@ function Section1() {
 
             </SecondContainer>
             <DetailImgsContainer>
-                {/* 성수를 위한 공간 :) */} 성수야 여기를 채워
+                
             </DetailImgsContainer>
 
             <Mainbg/>
@@ -164,4 +160,4 @@ function Section1() {
 }
 
 
-export default Section1;
+export default Sections;
