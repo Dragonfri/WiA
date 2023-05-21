@@ -21,7 +21,7 @@ const TopContainer = styled.div`
 const Mainbg = styled.div` //배경화면 흰색으로 만들기 위함.
   width: 100%;
   height: 100%;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.75);
   position: absolute;
   z-index: 0;
 `
@@ -87,8 +87,8 @@ const WifiContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 2vh;
-    /* background-color: rgba(15,85,173,1); */
-    /* border-radius: 20%; */
+    /* background-color: rgba(15,85,173,1);
+    border-radius: 20%; */
 
 
     @media (min-width: 0px) {

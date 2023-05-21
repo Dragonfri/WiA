@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Wifibox from './Wifibox';
-
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -8,7 +8,7 @@ const TopContainer = styled.div`
     width:100vw;
     height:100vh;
     /* background-color: tomato; */
-    background-image: url(${mainBg});
+    background-image: url(${props => props.mainBg});
     background-size: cover;
     background-position: center;
     display: flex;
@@ -20,7 +20,7 @@ const Mainbg = styled.div` //배경화면 흰색으로 만들기 위함.
   width: 100%;
   height: 100%;
   background-color: rgba(255,255,255,0.5);
-  position: absolute;
+  position: absolute; 
   z-index: 0;
 `
 
@@ -28,7 +28,7 @@ const SectionTitle = styled.div`
     text-align: center;
     width:100%;
     height: 10vh;
-    padding-top: 3vh; //임시로 해봄 너무 천장에 붙어있어서
+    padding-top: 5vh; //임시로 해봄 너무 천장에 붙어있어서
 
     @media (min-width: 0px) {
       font-size: 40px;
@@ -61,10 +61,7 @@ const SecondContainer = styled.div`
 
 const SectionImg = styled.img`
     
-    /* background-image: url(${sectionImg});
-    background-position: center;
-    background-size: cover; */
-    /* align-items: center; */
+    
     border-radius: 10%;
     @media (min-width: 0px) {
         width: 60vw;
@@ -106,47 +103,31 @@ const DetailImgsContainer = styled.div`
     /* background-color: blue; */
 `
 
-function Sections(props) {
+function Sections() {
+
+    const location = useLocation();
+    const { mainBg, sectionImg, wifipeople, sectionNum } = location.state;
+
+    console.log(location);
+    function createWifibox(wifiPeople) {
+        return wifiPeople.map((people,index) => (
+            <Wifibox key={index} wifiNumber={index + 1} wifiPeople={people} />
+        ))
+    }
 
 
     return (
-        <TopContainer mainBg={props.mainBg}>
+        <TopContainer mainBg={mainBg}>
 
-            <SectionTitle>section{props.sectionNum}</SectionTitle>
+            <SectionTitle>section{sectionNum}</SectionTitle>
 
             <SecondContainer>
 
-                <SectionImg src={props.sectionImg} />
+                <SectionImg src={sectionImg} />
 
                 <WifiContainer>
                     
-                    <Wifibox wifiNumber={1} wifiPeople={2} />
-
-                    <Wifibox wifiNumber={2} wifiPeople={4} />
-
-                    <Wifibox wifiNumber={3} wifiPeople={5} />
-
-                    <Wifibox wifiNumber={4} wifiPeople={6} />
-
-                    <Wifibox wifiNumber={5} wifiPeople={10} />
-
-                    <Wifibox wifiNumber={6} wifiPeople={12} />
-
-                    <Wifibox wifiNumber={7} wifiPeople={15} />
-
-                    <Wifibox wifiNumber={8} wifiPeople={18} />
-
-                    <Wifibox wifiNumber={9} wifiPeople={21} />
-
-                    <Wifibox wifiNumber={1} wifiPeople={2} />
-
-                    <Wifibox wifiNumber={2} wifiPeople={4} />
-
-                    <Wifibox wifiNumber={3} wifiPeople={5} />
-
-                    <Wifibox wifiNumber={4} wifiPeople={6} />
-
-                    <Wifibox wifiNumber={5} wifiPeople={10} />
+                    {createWifibox(wifipeople)}
                 </WifiContainer>
 
             </SecondContainer>
@@ -156,6 +137,7 @@ function Sections(props) {
 
             <Mainbg/>
         </TopContainer>
+
     );
 }
 
