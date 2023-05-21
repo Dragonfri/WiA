@@ -23,7 +23,7 @@ import Section7 from './components/Section7';
 import Section8 from './components/Section8';
 import Section9 from './components/Section9';
 import Section10 from './components/Section10';
-
+import Sections from "./components/Sections";
 
 
 function App() {
@@ -61,7 +61,8 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/1F" element={<Firstfloor/>}/>
           <Route path="/1F/section1" element={<Section1/>}/>
-          <Route path="/1F/section2" element={<Section2/>}/>
+          {/* <Route path="/1F/section2" element={<Section2/>}/> */}
+          <Route path="/1F/section2" element={<Sections/>}/>
           <Route path="/2F" element={<Secondfloor/>}/>
           <Route path="/2F/section3" element={<Section3/>}/>
           <Route path="/2F/section4" element={<Section4/>}/>
