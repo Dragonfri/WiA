@@ -13,6 +13,24 @@ import section7SectionImg from "../imgs/f4s7.jpg";
 import section8MainImg from "../imgs/f4s8Main.jpg";
 import section8SectionImg from "../imgs/f4s8.jpg";
 
+
+import s7w1 from "../imgs/section7/F4S7W1.jpg"
+import s7w2 from "../imgs/section7/F4S7W2.jpg"
+import s7w3 from "../imgs/section7/F4S7W3.jpg"
+import s7w4 from "../imgs/section7/F4S7W4.jpg"
+import s7w5 from "../imgs/section7/F4S7W5.jpg"
+import s7w6 from "../imgs/section7/F4S7W6.jpg"
+import s7w7 from "../imgs/section7/F4S7W7.jpg"
+
+import s8w1 from "../imgs/section8/F4S8W1.jpg"
+import s8w2 from "../imgs/section8/F4S8W2.jpg"
+import s8w3 from "../imgs/section8/F4S8W3.jpg"
+import s8w4 from "../imgs/section8/F4S8W4.jpg"
+import s8w5 from "../imgs/section8/F4S8W5.jpg"
+
+const section7Imgs = [s7w1, s7w2, s7w3, s7w4, s7w5, s7w6, s7w7];
+const section8Imgs = [s8w1, s8w2, s8w3, s8w4, s8w5];
+
 const TopContainer = styled.div`
   width: 100vw;
   height: 100vh;
@@ -146,6 +164,7 @@ function Fourthfloor() {
               sectionImg: `${section7SectionImg}`,
               wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
               sectionNum: "7",
+              images: section7Imgs
             }}
           >
             section7
@@ -157,6 +176,7 @@ function Fourthfloor() {
               sectionImg: `${section8SectionImg}`,
               wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
               sectionNum: "8",
+              images: section8Imgs
             }}
           >
             section8

@@ -13,6 +13,23 @@ import section9SectionImg from "../imgs/f5s9.jpg";
 import section10MainImg from "../imgs/f5s10Main.jpg";
 import section10SectionImg from "../imgs/f5s10.jpg";
 
+
+import s9w1 from "../imgs/section9/F5S9W1.jpg"
+import s9w2 from "../imgs/section9/F5S9W2.jpg"
+import s9w3 from "../imgs/section9/F5S9W3.jpg"
+import s9w4 from "../imgs/section9/F5S9W4.jpg"
+import s9w5 from "../imgs/section9/F5S9W5.jpg"
+import s9w6 from "../imgs/section9/F5S9W6.jpg"
+import s9w7 from "../imgs/section9/F5S9W7.jpg"
+
+import s10w1 from "../imgs/section10/F5S10W1.jpg"
+import s10w2 from "../imgs/section10/F5S10W2.jpg"
+import s10w3 from "../imgs/section10/F5S10W3.jpg"
+import s10w4 from "../imgs/section10/F5S10W4.jpg"
+
+const section9Imgs = [s9w1, s9w2, s9w3, s9w4, s9w5, s9w6, s9w7];
+const section10Imgs = [s10w1, s10w2, s10w3, s10w4];
+
 const TopContainer = styled.div`
   width: 100vw;
   height: 100vh;
@@ -146,6 +163,7 @@ function Fifthfloor() {
               sectionImg: `${section9SectionImg}`,
               wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
               sectionNum: "9",
+              images: section9Imgs
             }}
           >
             section9
@@ -157,6 +175,7 @@ function Fifthfloor() {
               sectionImg: `${section10SectionImg}`,
               wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
               sectionNum: "10",
+              images: section10Imgs
             }}
           >
             section10

@@ -15,6 +15,46 @@ import section4SectionImg from "../imgs/f2s4.jpg";
 import section5MainImg from "../imgs/f2s5Main.jpg";
 import section5SectionImg from "../imgs/f2s5.jpg";
 
+
+
+// 슬라이드 쇼 섹션 이미지들
+import s3w1 from "../imgs/section3/F2S3W1.jpg"
+import s3w2 from "../imgs/section3/F2S3W2.jpg"
+import s3w3 from "../imgs/section3/F2S3W3.jpg"
+import s3w4 from "../imgs/section3/F2S3W4.jpg"
+import s3w5 from "../imgs/section3/F2S3W5.jpg"
+import s3w6 from "../imgs/section3/F2S3W6.jpg"
+import s3w7 from "../imgs/section3/F2S3W7.jpg"
+import s3w8 from "../imgs/section3/F2S3W8.jpg"
+import s3w9 from "../imgs/section3/F2S3W9.jpg"
+import s3w10 from "../imgs/section3/F2S3W10.jpg"
+import s3w11 from "../imgs/section3/F2S3W11.jpg"
+import s3w12 from "../imgs/section3/F2S3W12.jpg"
+import s3w13 from "../imgs/section3/F2S3W13.jpg"
+import s3w14 from "../imgs/section3/F2S3W14.jpg"
+
+import s4w1 from "../imgs/section4/F2S4W1.jpg"
+import s4w2 from "../imgs/section4/F2S4W2.jpg"
+import s4w3 from "../imgs/section4/F2S4W3.jpg"
+import s4w4 from "../imgs/section4/F2S4W4.jpg"
+import s4w5 from "../imgs/section4/F2S4W5.jpg"
+import s4w6 from "../imgs/section4/F2S4W6.jpg"
+import s4w7 from "../imgs/section4/F2S4W7.jpg"
+import s4w8 from "../imgs/section4/F2S4W8.jpg"
+
+import s5w1 from "../imgs/section5/F2S5W1.jpg"
+import s5w2 from "../imgs/section5/F2S5W2.jpg"
+import s5w3 from "../imgs/section5/F2S5W3.jpg"
+import s5w4 from "../imgs/section5/F2S5W4.jpg"
+import s5w5 from "../imgs/section5/F2S5W5.jpg"
+import s5w6 from "../imgs/section5/F2S5W6.jpg"
+import s5w7 from "../imgs/section5/F2S5W7.jpg"
+import s5w8 from "../imgs/section5/F2S5W8.jpg"
+
+const section3Imgs = [s3w1, s3w2, s3w3, s3w4, s3w5, s3w6, s3w7, s3w8, s3w9, s3w10, s3w11, s3w12, s3w13, s3w14];
+const section4Imgs = [s4w1, s4w2, s4w3, s4w4, s4w5, s4w6,s4w7,s4w8];
+const section5Imgs = [s5w1, s5w2, s5w3, s5w4, s5w5, s5w6,s5w7,s5w8];
+
 const TopContainer = styled.div`
   width: 100vw;
   height: 100vh;
@@ -149,6 +189,7 @@ function Secondfloor() {
               sectionImg: `${section3SectionImg}`,
               wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
               sectionNum: "3",
+              images: section3Imgs
             }}
           >
             section3
@@ -160,6 +201,7 @@ function Secondfloor() {
               sectionImg: `${section4SectionImg}`,
               wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
               sectionNum: "4",
+              images: section4Imgs
             }}
           >
             section4
@@ -171,6 +213,7 @@ function Secondfloor() {
               sectionImg: `${section5SectionImg}`,
               wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
               sectionNum: "5",
+              images: section5Imgs
             }}
           >
             section5

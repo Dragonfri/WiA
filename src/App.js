@@ -128,7 +128,7 @@ function extract_data(data) {
 function App() {
   const [entireSection, setEntireSection] = useState([]);
 
-  console.log(entireSection[0]);
+  // console.log(entireSection[0]);
 
 
   // useEffect(() => {
