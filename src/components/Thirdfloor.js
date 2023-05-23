@@ -11,6 +11,12 @@ import mainBg from "../imgs/3f.jpg";
 import section6MainImg from "../imgs/f3s6Main.jpg";
 import section6SectionImg from "../imgs/f3s6.jpg";
 
+
+import s6w1 from "../imgs/section6/F3S6W1.jpg"
+import s6w2 from "../imgs/section6/F3S6W2.jpg"
+
+const section6Imgs = [s6w1, s6w2];
+
 const TopContainer = styled.div`
   width: 100vw;
   height: 100vh;
@@ -144,6 +150,7 @@ function Thirdfloor() {
               sectionImg: `${section6SectionImg}`,
               wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
               sectionNum: "6",
+              images: section6Imgs
             }}
           >
             section6
