@@ -10,6 +10,8 @@ import mainBg from "../imgs/1f.jpg";
 
 import section2MainImg from "../imgs/f1s2Main.jpg";
 import section2SectionImg from "../imgs/f1s2.jpg";
+import section1MainImg from "../imgs/f1s1Main.jpg";
+import section1SectionImg from "../imgs/f1s1.jpg";
 
 
 const TopContainer = styled.div`
@@ -137,19 +139,17 @@ function Firstfloor() {
       <SecondContainer>
         <MainImg src={mainImg} /> 
         <SectionContainer>
-          <Section to={"section1"}>section1</Section>
-          {/* <Section to={"section2"}>section2</Section> */}
-          <Section
-            // to={{
-            //   pathname: "/1F/section2",
-            //   state: {
-            //     mainBg: section2MainImg,
-            //     sectionImg: section2SectionImg,
-            //     wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
-            //     sectionNum: "2",
-            //   },
-            // }}
+          {/* <Section to={"section1"}>section1</Section> */}
 
+          <Section
+            
+            to={'/1F/section1'}
+            state={{ mainBg: `${section1MainImg}`, sectionImg: `${section1SectionImg}`, wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15], sectionNum: "1",}}
+            
+          > section1</Section>
+
+          <Section
+            
             to={'/1F/section2'}
             state={{ mainBg: `${section2MainImg}`, sectionImg: `${section2SectionImg}`, wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15], sectionNum: "2",}}
             

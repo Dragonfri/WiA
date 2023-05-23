@@ -131,20 +131,20 @@ function App() {
   console.log(entireSection[0]);
 
 
-  useEffect(() => {
-    call_api()
-    .then(data => {
-      setEntireSection(extract_data(data));
-    });
+  // useEffect(() => {
+  //   call_api()
+  //   .then(data => {
+  //     setEntireSection(extract_data(data));
+  //   });
 
-    const intervalId = setInterval(() => {  
-       call_api().then(data => setEntireSection(extract_data(data)));
-    }, 45000);
-    // Return a cleanup function to clear the interval on unmount
-    return () => {
-        clearInterval(intervalId);
-    };
-  }, []);
+  //   const intervalId = setInterval(() => {  
+  //      call_api().then(data => setEntireSection(extract_data(data)));
+  //   }, 45000);
+  //   // Return a cleanup function to clear the interval on unmount
+  //   return () => {
+  //       clearInterval(intervalId);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -153,21 +153,20 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/1F" element={<Firstfloor/>}/>
-          <Route path="/1F/section1" element={<Section1/>}/>
-          {/* <Route path="/1F/section2" element={<Section2/>}/> */}
+          <Route path="/1F/section1" element={<Sections/>}/>
           <Route path="/1F/section2" element={<Sections/>}/>
           <Route path="/2F" element={<Secondfloor/>}/>
-          <Route path="/2F/section3" element={<Section3/>}/>
-          <Route path="/2F/section4" element={<Section4/>}/>
-          <Route path="/2F/section5" element={<Section5/>}/>
+          <Route path="/2F/section3" element={<Sections/>}/>
+          <Route path="/2F/section4" element={<Sections/>}/>
+          <Route path="/2F/section5" element={<Sections/>}/>
           <Route path="/3F" element={<Thirdfloor/>}/>
-          <Route path="/3F/section6" element={<Section6/>}/>
+          <Route path="/3F/section6" element={<Sections/>}/>
           <Route path="/4F" element={<Fourthfloor/>}/>
-          <Route path="/4F/section7" element={<Section7/>}/>
-          <Route path="/4F/section8" element={<Section8/>}/>
+          <Route path="/4F/section7" element={<Sections/>}/>
+          <Route path="/4F/section8" element={<Sections/>}/>
           <Route path="/5F" element={<Fifthfloor/>}/>
-          <Route path="/5F/section9" element={<Section9/>}/>
-          <Route path="/5F/section10" element={<Section10/>}/>
+          <Route path="/5F/section9" element={<Sections/>}/>
+          <Route path="/5F/section10" element={<Sections/>}/>
         </Routes>
       </BrowserRouter>
     </>
