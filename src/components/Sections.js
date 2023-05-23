@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import sectionImg from "../imgs/f1s1.jpg";
 import Wifibox from './Wifibox';
-import mainBg from '../imgs/f1s1Main.jpg'
-
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -10,7 +8,7 @@ const TopContainer = styled.div`
     width:100vw;
     height:100vh;
     /* background-color: tomato; */
-    background-image: url(${mainBg});
+    background-image: url(${props => props.mainBg});
     background-size: cover;
     background-position: center;
     display: flex;
@@ -21,8 +19,8 @@ const TopContainer = styled.div`
 const Mainbg = styled.div` //배경화면 흰색으로 만들기 위함.
   width: 100%;
   height: 100%;
-  background-color: rgba(255,255,255,0.75);
-  position: absolute;
+  background-color: rgba(255,255,255,0.5);
+  position: absolute; 
   z-index: 0;
 `
 
@@ -30,7 +28,7 @@ const SectionTitle = styled.div`
     text-align: center;
     width:100%;
     height: 10vh;
-    padding-top: 2vh; //임시로 해봄 너무 천장에 붙어있어서
+    padding-top: 5vh; //임시로 해봄 너무 천장에 붙어있어서
 
     @media (min-width: 0px) {
       font-size: 40px;
@@ -63,15 +61,11 @@ const SecondContainer = styled.div`
 
 const SectionImg = styled.img`
     
-    /* background-image: url(${sectionImg});
-    background-position: center;
-    background-size: cover; */
-    /* align-items: center; */
+    
     border-radius: 10%;
     @media (min-width: 0px) {
         width: 60vw;
         height: 29vh;
-        padding: 1vh 0 1vh 0;
     }
     @media (min-width: 770px) {
         width: 40vw;
@@ -87,14 +81,13 @@ const WifiContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 2vh;
-    /* background-color: rgba(15,85,173,1);
-    border-radius: 20%; */
-
+    /* background-color: rgba(15,85,173,1); */
+    /* border-radius: 20%; */
+    
 
     @media (min-width: 0px) {
         width: 90vw;
         height: 29vh;
-        padding: 1vh 0 1vh 0;
     }
     @media (min-width: 770px) {
         width: 50vw;
@@ -110,13 +103,23 @@ const DetailImgsContainer = styled.div`
     /* background-color: blue; */
 `
 
-function Section1() {
+function Sections() {
+
+    const location = useLocation();
+    const { mainBg, sectionImg, wifipeople, sectionNum } = location.state;
+
+    console.log(location);
+    function createWifibox(wifiPeople) {
+        return wifiPeople.map((people,index) => (
+            <Wifibox key={index} wifiNumber={index + 1} wifiPeople={people} />
+        ))
+    }
 
 
     return (
-        <TopContainer>
+        <TopContainer mainBg={mainBg}>
 
-            <SectionTitle>section1</SectionTitle>
+            <SectionTitle>section{sectionNum}</SectionTitle>
 
             <SecondContainer>
 
@@ -124,44 +127,19 @@ function Section1() {
 
                 <WifiContainer>
                     
-                    <Wifibox wifiNumber={1} wifiPeople={2} />
-
-                    <Wifibox wifiNumber={2} wifiPeople={4} />
-
-                    <Wifibox wifiNumber={3} wifiPeople={5} />
-
-                    <Wifibox wifiNumber={4} wifiPeople={6} />
-
-                    <Wifibox wifiNumber={5} wifiPeople={10} />
-
-                    <Wifibox wifiNumber={6} wifiPeople={12} />
-
-                    <Wifibox wifiNumber={7} wifiPeople={15} />
-
-                    <Wifibox wifiNumber={8} wifiPeople={18} />
-
-                    <Wifibox wifiNumber={9} wifiPeople={21} />
-
-                    <Wifibox wifiNumber={1} wifiPeople={2} />
-
-                    <Wifibox wifiNumber={2} wifiPeople={4} />
-
-                    <Wifibox wifiNumber={3} wifiPeople={5} />
-
-                    <Wifibox wifiNumber={4} wifiPeople={6} />
-
-                    <Wifibox wifiNumber={5} wifiPeople={10} />
+                    {createWifibox(wifipeople)}
                 </WifiContainer>
 
             </SecondContainer>
             <DetailImgsContainer>
-                {/* 성수를 위한 공간 :) */} 성수야 여기를 채워
+                
             </DetailImgsContainer>
 
             <Mainbg/>
         </TopContainer>
+
     );
 }
 
 
-export default Section1;
+export default Sections;
