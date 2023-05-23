@@ -28,7 +28,7 @@ const SectionTitle = styled.div`
     text-align: center;
     width:100%;
     height: 10vh;
-    padding-top: 5vh; //임시로 해봄 너무 천장에 붙어있어서
+    padding-top: 3vh; //임시로 해봄 너무 천장에 붙어있어서
 
     @media (min-width: 0px) {
       font-size: 40px;
@@ -108,13 +108,14 @@ function Sections() {
     const location = useLocation();
     const { mainBg, sectionImg, wifipeople, sectionNum } = location.state;
 
-    console.log(location);
+    
     function createWifibox(wifiPeople) {
         return wifiPeople.map((people,index) => (
             <Wifibox key={index} wifiNumber={index + 1} wifiPeople={people} />
         ))
     }
 
+    
 
     return (
         <TopContainer mainBg={mainBg}>
