@@ -205,11 +205,16 @@ function wrap(min, max, value) {
     return ((((value - min) % rangeSize) + rangeSize) % rangeSize) + min;
   }
 
-function Sections() {
+function Sections({wifiPeople}) {
   const location = useLocation();
   const { mainBg, sectionImg, wifipeople, sectionNum, images } = location.state;
 
   function createWifibox(wifiPeople) {
+    if (wifiPeople === undefined) {
+      return wifipeople.map((people, index) => (
+        <Wifibox key={index} wifiNumber={index + 1} wifiPeople={people} />
+      ));
+    }
     return wifiPeople.map((people, index) => (
       <Wifibox key={index} wifiNumber={index + 1} wifiPeople={people} />
     ));
@@ -231,7 +236,7 @@ function Sections() {
       <SecondContainer>
         <SectionImg src={sectionImg} />
 
-        <WifiContainer>{createWifibox(wifipeople)}</WifiContainer>
+        <WifiContainer>{createWifibox(wifiPeople)}</WifiContainer>
       </SecondContainer>
       <DetailImgsContainer>
         <SlideBtn className="prev" onClick={() => paginate(-1)}>
