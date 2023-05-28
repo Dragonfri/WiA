@@ -25,12 +25,19 @@ import Section9 from './components/Section9';
 import Section10 from './components/Section10';
 import Sections from "./components/Sections";
 import { extract_data } from "./datas/extractWifiData";
+import { TimeContext } from "./context/TimeContext";
 
 
 function App() {
   const [entireSection, setEntireSection] = useState([]);  
-  
+  const [time, setTime] = useState(45);
+
   useEffect(() => {
+    
+    const timeInterval = setInterval(() => {
+      setTime(prevTime => prevTime === 1 ? 45 : prevTime-1);
+    }, 1000);
+
     call_api()
     .then(data => {
       setEntireSection(extract_data(data));
@@ -42,6 +49,7 @@ function App() {
     // Return a cleanup function to clear the interval on unmount
     return () => {
         clearInterval(intervalId);
+        clearInterval(timeInterval);
     };
   }, []);
 
@@ -49,24 +57,26 @@ function App() {
     <>
       <BrowserRouter>
         <GlobalStyles />
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/1F" element={<Firstfloor/>}/>
-          <Route path="/1F/section1" element={<Sections wifiPeople={entireSection[0]}/>}/>
-          <Route path="/1F/section2" element={<Sections wifiPeople={entireSection[1]}/>}/>
-          <Route path="/2F" element={<Secondfloor/>}/>
-          <Route path="/2F/section3" element={<Sections wifiPeople={entireSection[2]}/>}/>
-          <Route path="/2F/section4" element={<Sections wifiPeople={entireSection[3]}/>}/>
-          <Route path="/2F/section5" element={<Sections wifiPeople={entireSection[4]}/>}/>
-          <Route path="/3F" element={<Thirdfloor/>}/>
-          <Route path="/3F/section6" element={<Sections wifiPeople={entireSection[5]}/>}/>
-          <Route path="/4F" element={<Fourthfloor/>}/>
-          <Route path="/4F/section7" element={<Sections wifiPeople={entireSection[6]}/>}/>
-          <Route path="/4F/section8" element={<Sections wifiPeople={entireSection[7]}/>}/>
-          <Route path="/5F" element={<Fifthfloor/>}/>
-          <Route path="/5F/section9" element={<Sections wifiPeople={entireSection[8]}/>}/>
-          <Route path="/5F/section10" element={<Sections wifiPeople={entireSection[9]}/>}/>
-        </Routes>
+        <TimeContext.Provider value={{time, setTime}}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/1F" element={<Firstfloor />}/>
+            <Route path="/1F/section1" element={<Sections wifiPeople={entireSection[0]}/>}/>
+            <Route path="/1F/section2" element={<Sections wifiPeople={entireSection[1]}/>}/>
+            <Route path="/2F" element={<Secondfloor />}/>
+            <Route path="/2F/section3" element={<Sections wifiPeople={entireSection[2]}/>}/>
+            <Route path="/2F/section4" element={<Sections wifiPeople={entireSection[3]}/>}/>
+            <Route path="/2F/section5" element={<Sections wifiPeople={entireSection[4]}/>}/>
+            <Route path="/3F" element={<Thirdfloor />}/>
+            <Route path="/3F/section6" element={<Sections wifiPeople={entireSection[5]}/>}/>
+            <Route path="/4F" element={<Fourthfloor />}/>
+            <Route path="/4F/section7" element={<Sections wifiPeople={entireSection[6]}/>}/>
+            <Route path="/4F/section8" element={<Sections wifiPeople={entireSection[7]}/>}/>
+            <Route path="/5F" element={<Fifthfloor />}/>
+            <Route path="/5F/section9" element={<Sections wifiPeople={entireSection[8]}/>}/>
+            <Route path="/5F/section10" element={<Sections wifiPeople={entireSection[9]}/>}/>
+          </Routes>
+        </TimeContext.Provider>
       </BrowserRouter>
     </>
   );

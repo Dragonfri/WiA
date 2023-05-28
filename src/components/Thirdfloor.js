@@ -2,8 +2,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { call_api } from "../apiCall/wifi_call";
+import Timer from "./Timer";
+import { TimeContext } from "../context/TimeContext";
 
 import mainImg from "../imgs/f3section.jpg";
 import mainBg from "../imgs/3f.jpg";
@@ -136,6 +138,7 @@ function Thirdfloor() {
   //     // }, 50000);
 
   // }, []);
+  const {time, setTime} = useContext(TimeContext);
 
   return (
     <TopContainer>
@@ -143,6 +146,7 @@ function Thirdfloor() {
       <SecondContainer>
         <MainImg src={mainImg} />
         <SectionContainer>
+          <Timer time={time} />
           <Section
             to={"/3F/section6"}
             state={{

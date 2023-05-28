@@ -74,24 +74,23 @@ function TimerFunction(){
 }
 
 
-function Timer(props) {
+function Timer({time}) {
 
-    let [Time = 45, setTime] = useState();
-
-    useEffect(() => {
-        const interval = setInterval(() => setTime(Time === 1 ? Time = 45 : --Time), 1000);
-        const intervalId = setInterval(() => {  console.log("Hello")  }, 45000);
-        // Return a cleanup function to clear the interval on unmount
-        return () => {
-            clearInterval(intervalId);
-            clearInterval(interval);
-        };
-      }, []);
+ 
+    // useEffect(() => {
+    //     const interval = setInterval(() => setTime(Time === 1 ? Time = 45 : --Time), 1000);
+    //     const intervalId = setInterval(() => {  console.log("Hello")  }, 45000);
+    //     // Return a cleanup function to clear the interval on unmount
+    //     return () => {
+    //         clearInterval(intervalId);
+    //         clearInterval(interval);
+    //     };
+    //   }, []);
 
     return (
         <TimerContainer>
             <TimerText>새로고침</TimerText>
-            <TimerItem>{Time}</TimerItem>
+            <TimerItem>{time}</TimerItem>
         </TimerContainer>
     );
 }

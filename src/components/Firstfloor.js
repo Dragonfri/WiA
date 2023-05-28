@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { useEffect } from "react";
+import { useEffect, useState, useContext } from "react";
 import { call_api } from "../apiCall/wifi_call";
 
 import mainImg from "../imgs/f1section.jpg";
@@ -33,6 +33,8 @@ import s2w3 from "../imgs/section2/F1S2W3.jpg"
 import s2w4 from "../imgs/section2/F1S2W4.jpg"
 import s2w5 from "../imgs/section2/F1S2W5.jpg"
 import s2w6 from "../imgs/section2/F1S2W6.jpg"
+import Timer from "./Timer";
+import { TimeContext } from "../context/TimeContext";
 
 const section1Imgs = [s1w1, s1w2, s1w3, s1w4, s1w5, s1w6, s1w7, s1w8, s1w9, s1w10, s1w11];
 const section2Imgs = [s2w1, s2w2, s2w3, s2w4, s2w5, s2w6];
@@ -143,6 +145,7 @@ const Section = styled(Link)`
   }
 `;
 
+
 function Firstfloor() {
   // console.log("function first");
   // useEffect(() => {
@@ -157,14 +160,29 @@ function Firstfloor() {
   //     // }, 50000);
 
   // }, []);
+  const {time, setTime} = useContext(TimeContext);
+
+  // useEffect(() => {
+      
+  //   const timeInterval = setInterval(() => {
+  //     setTime(prevTime => prevTime === 1 ? 45 : prevTime-1);
+  //   }, 1000);
+
+  //   return () => {
+  //     clearInterval(timeInterval);
+  //   }
+  // }, []);
+
   return (
     <TopContainer>
       <MainTitle>1층</MainTitle>
       <SecondContainer>
         <MainImg src={mainImg} /> 
         <SectionContainer>
+          <Timer time={time} />
           {/* <Section to={"section1"}>section1</Section> */}
 
+          {/* <Timer time={lastTime} /> */}
           <Section
             
             to={'/1F/section1'}
@@ -175,7 +193,7 @@ function Firstfloor() {
           <Section
             
             to={'/1F/section2'}
-            state={{ mainBg: `${section2MainImg}`, sectionImg: `${section2SectionImg}`, wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15], sectionNum: "2",images: section2Imgs }}
+            state={{ mainBg: `${section2MainImg}`, sectionImg: `${section2SectionImg}`, wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15], sectionNum: "2",images: section2Imgs}}
             
           >
             section2
