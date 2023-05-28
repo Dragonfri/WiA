@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const handleColorType = wifiPeople => {
-    console.log(wifiPeople)
     if (wifiPeople < 7) {
         return "color: black; background: #86D9A9;"
     }
