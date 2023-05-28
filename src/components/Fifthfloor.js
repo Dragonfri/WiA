@@ -2,8 +2,11 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { call_api } from "../apiCall/wifi_call";
+import Timer from "./Timer";
+import { TimeContext } from "../context/TimeContext";
+
 
 import mainImg from "../imgs/f5section.jpg";
 import mainBg from "../imgs/5f.jpg";
@@ -149,6 +152,7 @@ function Fifthfloor() {
   //     // }, 50000);
 
   // }, []);
+  const {time, setTime} = useContext(TimeContext);
 
   return (
     <TopContainer>
@@ -156,6 +160,7 @@ function Fifthfloor() {
       <SecondContainer>
         <MainImg src={mainImg} />
         <SectionContainer>
+          <Timer time={time} />
           <Section
             to={"/5F/section9"}
             state={{

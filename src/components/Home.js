@@ -8,9 +8,11 @@ import floor4 from '../imgs/4f.jpg'
 import floor5 from '../imgs/5f.jpg'
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { call_api } from '../apiCall/wifi_call';
 import { detailWifi } from '../datas/mapping';
+import Timer from './Timer.js';
+import { TimeContext } from '../context/TimeContext';
 
 
 
@@ -107,14 +109,20 @@ const BoxInfo = styled.div`
 
 function Home(){
 
-    useEffect(() => {
-    }, []);
+    const {time, setTime} = useContext(TimeContext);
+
 
     return(
         <TopContainer>
 
       <Title variants={TitleVariants} whileHover={"hover"}>WIA</Title>
-      
+      {/* (
+        <TimerContainer>
+            <TimerText>새로고침</TimerText>
+            <TimerItem>{time}</TimerItem>
+        </TimerContainer>
+      ) */}
+      <Timer time={time} />
 
       <BoxContainer>
 

@@ -3,10 +3,10 @@ import Wifibox from "./Wifibox";
 import { useLocation } from "react-router-dom";
 
 // 슬라이드 쇼
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-
+import Timer from "./Timer";
+import { TimeContext } from "../context/TimeContext";
 
 
 const TopContainer = styled.div`
@@ -203,13 +203,19 @@ const swipePower = (offset, velocity) => {
 function wrap(min, max, value) {
     const rangeSize = max - min;
     return ((((value - min) % rangeSize) + rangeSize) % rangeSize) + min;
-  }
+}
 
-function Sections() {
+function Sections({wifiPeople}) {
   const location = useLocation();
   const { mainBg, sectionImg, wifipeople, sectionNum, images } = location.state;
+  const {time, setTime} = useContext(TimeContext);
 
   function createWifibox(wifiPeople) {
+    if (wifiPeople === undefined) {
+      return wifipeople.map((people, index) => (
+        <Wifibox key={index} wifiNumber={index + 1} wifiPeople={people} />
+      ));
+    }
     return wifiPeople.map((people, index) => (
       <Wifibox key={index} wifiNumber={index + 1} wifiPeople={people} />
     ));
@@ -227,11 +233,12 @@ function Sections() {
   return (
     <TopContainer mainBg={mainBg}>
       <SectionTitle>section{sectionNum}</SectionTitle>
+      <Timer time={time} />
 
       <SecondContainer>
         <SectionImg src={sectionImg} />
 
-        <WifiContainer>{createWifibox(wifipeople)}</WifiContainer>
+        <WifiContainer>{createWifibox(wifiPeople)}</WifiContainer>
       </SecondContainer>
       <DetailImgsContainer>
         <SlideBtn className="prev" onClick={() => paginate(-1)}>
