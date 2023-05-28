@@ -168,7 +168,7 @@ function Firstfloor() {
           <Section
             
             to={'/1F/section1'}
-            state={{ mainBg: `${section1MainImg}`, sectionImg: `${section1SectionImg}`, wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15], sectionNum: "1", images: section1Imgs}}
+            state={{ mainBg: `${section1MainImg}`, sectionImg: `${section1SectionImg}`, wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15,20], sectionNum: "1", images: section1Imgs}}
             
           > section1</Section>
 

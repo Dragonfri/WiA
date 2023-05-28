@@ -117,30 +117,15 @@ function Home(){
       
 
       <BoxContainer>
-          <SecondBox>
-          <Box text="5F" backImg={floor5}></Box>
-          <BoxInfo>
-            제3자료실<br/><br/>
-            자료실<br/><br/>
-            개인문고, 참고도서<br/><br/>
-          </BoxInfo>
-          </SecondBox>
-        
-          <SecondBox>
-          <Box text="4F" backImg={floor4}></Box>
-          <BoxInfo>
-            제2자료실<br/><br/>
-            대출실<br/><br/>
-            제1자료실<br/><br/>
-          </BoxInfo>
-          </SecondBox>
 
-          <SecondBox>
-        <Box text="3F" backImg={floor3}></Box>
-            <BoxInfo>
-            외국 학술지 지원센터<br/><br/>
-            연속 간행물실
-            </BoxInfo>
+      <SecondBox>
+
+
+        <Box text="1F" backImg={floor1}></Box>
+          <BoxInfo>
+            아우룸<br/><br/>
+            99th street
+          </BoxInfo>
         </SecondBox>
 
         <SecondBox>
@@ -152,14 +137,38 @@ function Home(){
             장애인 열람실
           </BoxInfo>
         </SecondBox>
+          
+        
+
+          <SecondBox>
+        <Box text="3F" backImg={floor3}></Box>
+            <BoxInfo>
+            외국 학술지 지원센터<br/><br/>
+            연속 간행물실
+            </BoxInfo>
+        </SecondBox>
 
         <SecondBox>
-        <Box text="1F" backImg={floor1}></Box>
+          <Box text="4F" backImg={floor4}></Box>
           <BoxInfo>
-            아우룸<br/><br/>
-            99th street
+            제2자료실<br/><br/>
+            대출실<br/><br/>
+            제1자료실<br/><br/>
           </BoxInfo>
-        </SecondBox>
+          </SecondBox>
+
+        <SecondBox>
+          <Box text="5F" backImg={floor5}></Box>
+          <BoxInfo>
+            제3자료실<br/><br/>
+            자료실<br/><br/>
+            개인문고, 참고도서<br/><br/>
+          </BoxInfo>
+          </SecondBox>
+
+          
+
+        
       </BoxContainer>
 
       <Mainbg/>

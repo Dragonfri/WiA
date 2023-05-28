@@ -106,7 +106,7 @@ const DetailImgsContainer = styled.div`
   z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   /* background-color: blue; */
 
   
