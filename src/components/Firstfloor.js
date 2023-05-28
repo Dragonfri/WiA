@@ -10,6 +10,32 @@ import mainBg from "../imgs/1f.jpg";
 
 import section2MainImg from "../imgs/f1s2Main.jpg";
 import section2SectionImg from "../imgs/f1s2.jpg";
+import section1MainImg from "../imgs/f1s1Main.jpg";
+import section1SectionImg from "../imgs/f1s1.jpg";
+
+
+// 슬라이드 쇼 섹션 1 이미지들
+import s1w1 from "../imgs/section1/F1S1W1.jpg"
+import s1w2 from "../imgs/section1/F1S1W2.jpg"
+import s1w3 from "../imgs/section1/F1S1W3.jpg"
+import s1w4 from "../imgs/section1/F1S1W4.jpg"
+import s1w5 from "../imgs/section1/F1S1W5.jpg"
+import s1w6 from "../imgs/section1/F1S1W6.jpg"
+import s1w7 from "../imgs/section1/F1S1W7.jpg"
+import s1w8 from "../imgs/section1/F1S1W8.jpg"
+import s1w9 from "../imgs/section1/F1S1W9.jpg"
+import s1w10 from "../imgs/section1/F1S1W10.jpg"
+import s1w11 from "../imgs/section1/F1S1W11.jpg"
+
+import s2w1 from "../imgs/section2/F1S2W1.jpg"
+import s2w2 from "../imgs/section2/F1S2W2.jpg"
+import s2w3 from "../imgs/section2/F1S2W3.jpg"
+import s2w4 from "../imgs/section2/F1S2W4.jpg"
+import s2w5 from "../imgs/section2/F1S2W5.jpg"
+import s2w6 from "../imgs/section2/F1S2W6.jpg"
+
+const section1Imgs = [s1w1, s1w2, s1w3, s1w4, s1w5, s1w6, s1w7, s1w8, s1w9, s1w10, s1w11];
+const section2Imgs = [s2w1, s2w2, s2w3, s2w4, s2w5, s2w6];
 
 
 const TopContainer = styled.div`
@@ -137,21 +163,19 @@ function Firstfloor() {
       <SecondContainer>
         <MainImg src={mainImg} /> 
         <SectionContainer>
-          <Section to={"section1"}>section1</Section>
-          {/* <Section to={"section2"}>section2</Section> */}
-          <Section
-            // to={{
-            //   pathname: "/1F/section2",
-            //   state: {
-            //     mainBg: section2MainImg,
-            //     sectionImg: section2SectionImg,
-            //     wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
-            //     sectionNum: "2",
-            //   },
-            // }}
+          {/* <Section to={"section1"}>section1</Section> */}
 
+          <Section
+            
+            to={'/1F/section1'}
+            state={{ mainBg: `${section1MainImg}`, sectionImg: `${section1SectionImg}`, wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15], sectionNum: "1", images: section1Imgs}}
+            
+          > section1</Section>
+
+          <Section
+            
             to={'/1F/section2'}
-            state={{ mainBg: `${section2MainImg}`, sectionImg: `${section2SectionImg}`, wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15], sectionNum: "2",}}
+            state={{ mainBg: `${section2MainImg}`, sectionImg: `${section2SectionImg}`, wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15], sectionNum: "2",images: section2Imgs }}
             
           >
             section2
