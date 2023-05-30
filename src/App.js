@@ -13,16 +13,6 @@ import Fifthfloor from './components/Fifthfloor';
 import { useEffect, useState } from 'react';
 import { call_api } from '../src/apiCall/wifi_call';
 
-import Section1 from './components/Section1';
-import Section2 from './components/Section2';
-import Section3 from './components/Section3';
-import Section4 from './components/Section4';
-import Section5 from './components/Section5';
-import Section6 from './components/Section6';
-import Section7 from './components/Section7';
-import Section8 from './components/Section8';
-import Section9 from './components/Section9';
-import Section10 from './components/Section10';
 import Sections from "./components/Sections";
 import { extract_data } from "./datas/extractWifiData";
 import { TimeContext } from "./context/TimeContext";
@@ -38,9 +28,10 @@ function App() {
       setTime(prevTime => prevTime === 1 ? 45 : prevTime-1);
     }, 1000);
 
-    call_api()
-    .then(data => {
+    call_api().then(data => {
+      // console.log("test",data);
       setEntireSection(extract_data(data));
+      
     });
 
     const intervalId = setInterval(() => {  

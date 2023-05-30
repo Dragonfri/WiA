@@ -192,7 +192,7 @@ function Secondfloor() {
             state={{
               mainBg: `${section3MainImg}`,
               sectionImg: `${section3SectionImg}`,
-              wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
+              wifipeople: null,
               sectionNum: "3",
               images: section3Imgs
             }}
@@ -204,7 +204,7 @@ function Secondfloor() {
             state={{
               mainBg: `${section4MainImg}`,
               sectionImg: `${section4SectionImg}`,
-              wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
+              wifipeople: null,
               sectionNum: "4",
               images: section4Imgs
             }}
@@ -216,7 +216,7 @@ function Secondfloor() {
             state={{
               mainBg: `${section5MainImg}`,
               sectionImg: `${section5SectionImg}`,
-              wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
+              wifipeople: null,
               sectionNum: "5",
               images: section5Imgs
             }}

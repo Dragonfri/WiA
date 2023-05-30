@@ -166,7 +166,7 @@ function Fifthfloor() {
             state={{
               mainBg: `${section9MainImg}`,
               sectionImg: `${section9SectionImg}`,
-              wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
+              wifipeople: null,
               sectionNum: "9",
               images: section9Imgs
             }}
@@ -178,7 +178,7 @@ function Fifthfloor() {
             state={{
               mainBg: `${section10MainImg}`,
               sectionImg: `${section10SectionImg}`,
-              wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
+              wifipeople: null,
               sectionNum: "10",
               images: section10Imgs
             }}

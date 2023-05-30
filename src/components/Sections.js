@@ -97,6 +97,28 @@ const WifiContainer = styled.div`
   }
 `;
 
+const TempWifiContainer = styled.div`
+
+display: flex;
+flex-direction: column;
+align-content: center;
+justify-content: center;
+text-align: center;
+color: rgba(15, 85, 173, 1);
+  
+@media (min-width: 0px) {
+    width: 90vw;
+    height: 29vh;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  @media (min-width: 770px) {
+    font-size: 50px;
+    font-weight: bold;
+    width: 50vw;
+    height: 50vh;
+  }
+`
 
 
 // 슬라이드 쇼
@@ -107,6 +129,7 @@ const DetailImgsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 2vh;
   /* background-color: blue; */
 
   
@@ -238,7 +261,7 @@ function Sections({wifiPeople}) {
       <SecondContainer>
         <SectionImg src={sectionImg} />
 
-        <WifiContainer>{createWifibox(wifiPeople)}</WifiContainer>
+        {wifiPeople == null ? <TempWifiContainer>인원수를 불러오는 중입니다...</TempWifiContainer> : <WifiContainer>{createWifibox(wifiPeople)}</WifiContainer>}
       </SecondContainer>
       <DetailImgsContainer>
         <SlideBtn className="prev" onClick={() => paginate(-1)}>
