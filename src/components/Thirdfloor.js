@@ -152,7 +152,7 @@ function Thirdfloor() {
             state={{
               mainBg: `${section6MainImg}`,
               sectionImg: `${section6SectionImg}`,
-              wifipeople: [2, 4, 6, 8, 10, 3, 6, 9, 15],
+              wifipeople: null,
               sectionNum: "6",
               images: section6Imgs
             }}

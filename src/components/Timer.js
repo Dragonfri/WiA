@@ -3,8 +3,29 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+
+const handleBackgroundColor = time => {
+    if (time < 6 && time > 4) {
+        return "background: rgba(254, 76, 84,0.3);"
+    }else if (time < 5 && time > 3) {
+        return "background: rgba(254, 76, 84,0.4);"
+    }
+    else if (time < 4 && time > 2) {
+        return "background: rgba(254, 76, 84,0.6);"
+    }
+    else if (time < 3 && time > 1) {
+        return "background: rgba(254, 76, 84,0.8);"
+    }
+    else if (time <= 2) {
+        return "background: rgba(254, 76, 84,1);"
+    }
+    else{
+        return "background: transparent;"
+    }
+  };
+
 const TimerContainer = styled.div`
-    border: 2px solid black;
+    border: 2px solid rgba(15, 85, 173, 1);
     display: flex;
     flex-direction: column;
     margin-left: 1vw;
@@ -13,13 +34,15 @@ const TimerContainer = styled.div`
     position: absolute;
     right: 1vw;
     top: 1vh;
+    color: rgba(15, 85, 173, 1);
+    z-index: 2;
 
-    
+    ${({ time }) => handleBackgroundColor(time)};
 
     @media (min-width: 0px) {
         font-size: 10px;
-        width: 20px; 
-        height: 25px;
+        width: 40px; 
+        height: 45px;
     }
     @media (min-width: 770px) {
         font-size: 20px;
@@ -88,7 +111,7 @@ function Timer({time}) {
     //   }, []);
 
     return (
-        <TimerContainer>
+        <TimerContainer time={time}>
             <TimerText>새로고침</TimerText>
             <TimerItem>{time}</TimerItem>
         </TimerContainer>
